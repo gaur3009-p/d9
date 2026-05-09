@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Indra Skin Clinic | Vikas Nagar, Lucknow</title>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #007a8a;
+    --teal-dark: #005f6b;
+    --teal-light: #e0f4f7;
+    --sky: #00b4c8;
+    --navy: #1a2e3a;
+    --cream: #fafcfc;
+    --muted: #5a7282;
+    --border: #d0e4e8;
+    --text: #1e3040;
+  }
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Nunito Sans', sans-serif; background: #fff; color: var(--text); }
+
+  /* ALERT BAR */
+  .alert-bar { background: var(--teal); color: #fff; text-align: center; padding: 0.5rem 2rem; font-size: 0.8rem; }
+  .alert-bar a { color: #fff; font-weight: 700; }
+
+  /* TOP NAV */
+  .top-nav { background: var(--navy); padding: 0.5rem 6vw; display: flex; justify-content: space-between; align-items: center; }
+  .top-nav-links { display: flex; gap: 2rem; }
+  .top-nav a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.78rem; transition: color 0.2s; }
+  .top-nav a:hover { color: #fff; }
+
+  /* MAIN NAV */
+  nav { background: #fff; display: flex; align-items: center; justify-content: space-between; padding: 0 6vw; height: 80px; box-shadow: 0 2px 16px rgba(0,122,138,0.1); position: sticky; top: 0; z-index: 100; }
+  .logo { display: flex; align-items: center; gap: 0.8rem; text-decoration: none; }
+  .logo-mark { width: 52px; height: 52px; background: var(--teal); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+  .logo-mark svg { width: 28px; height: 28px; fill: #fff; }
+  .logo-words { line-height: 1.2; }
+  .logo-main { font-family: 'Merriweather', serif; font-size: 1.05rem; color: var(--navy); font-weight: 700; }
+  .logo-est { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
+  nav ul { display: flex; gap: 0.2rem; list-style: none; }
+  nav ul a { padding: 0.5rem 1rem; border-radius: 4px; color: var(--text); text-decoration: none; font-size: 0.88rem; font-weight: 600; transition: all 0.2s; }
+  nav ul a:hover { background: var(--teal-light); color: var(--teal); }
+  .appt-btn { background: var(--teal); color: #fff !important; padding: 0.65rem 1.5rem; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 700; transition: background 0.2s; }
+  .appt-btn:hover { background: var(--teal-dark); }
+
+  /* HERO */
+  .hero { background: var(--navy); min-height: 70vh; display: grid; grid-template-columns: 1fr 1fr; position: relative; overflow: hidden; }
+  .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--teal), var(--sky)); }
+  .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 5rem 5vw 5rem 6vw; }
+  .breadcrumb { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; font-size: 0.75rem; color: rgba(255,255,255,0.5); }
+  .breadcrumb span { color: var(--sky); }
+  .hero-left h1 { font-family: 'Merriweather', serif; font-size: clamp(2rem, 3.5vw, 3rem); color: #fff; line-height: 1.25; margin-bottom: 0.8rem; font-weight: 700; }
+  .hero-left h1 em { color: var(--sky); font-style: normal; }
+  .est-badge { display: inline-flex; gap: 0.5rem; align-items: center; background: rgba(0,180,200,0.15); border: 1px solid rgba(0,180,200,0.3); color: var(--sky); padding: 0.35rem 0.9rem; border-radius: 20px; font-size: 0.75rem; font-weight: 700; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.08em; }
+  .hero-left p { color: rgba(255,255,255,0.65); line-height: 1.85; font-size: 0.97rem; max-width: 460px; margin-bottom: 2.5rem; }
+  .hero-btns { display: flex; gap: 1rem; }
+  .hbtn-primary { background: var(--teal); color: #fff; padding: 0.9rem 2rem; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 0.88rem; transition: background 0.2s; }
+  .hbtn-primary:hover { background: var(--teal-dark); }
+  .hbtn-ghost { border: 2px solid rgba(255,255,255,0.3); color: #fff; padding: 0.9rem 2rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.88rem; transition: all 0.2s; }
+  .hbtn-ghost:hover { border-color: var(--sky); color: var(--sky); }
+  .hero-right { position: relative; }
+  .hero-right img { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; }
+  .hero-right::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, var(--navy) 0%, transparent 40%); z-index: 1; }
+
+  /* INFO STRIP */
+  .info-strip { background: var(--teal-light); border-bottom: 1px solid var(--border); }
+  .info-strip-inner { display: grid; grid-template-columns: repeat(4, 1fr); padding: 0 6vw; }
+  .info-item { padding: 1.5rem 1rem; border-right: 1px solid var(--border); display: flex; align-items: center; gap: 0.8rem; }
+  .info-item:last-child { border-right: none; }
+  .info-icon { font-size: 1.3rem; }
+  .info-text strong { display: block; font-size: 0.82rem; color: var(--teal-dark); font-weight: 700; }
+  .info-text span { font-size: 0.78rem; color: var(--muted); }
+
+  /* SECTION */
+  .section { padding: 80px 6vw; }
+  .section-header { margin-bottom: 3rem; }
+  .stag { color: var(--teal); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.6rem; }
+  .stag::before { content: ''; width: 24px; height: 2px; background: var(--teal); }
+  .section-header h2 { font-family: 'Merriweather', serif; font-size: clamp(1.6rem, 2.8vw, 2.4rem); color: var(--navy); }
+  .section-header p { color: var(--muted); font-size: 0.97rem; line-height: 1.8; margin-top: 0.8rem; max-width: 580px; }
+
+  /* SERVICES */
+  .services-bg { background: var(--cream); }
+  .svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); }
+  .svc-card { background: #fff; padding: 2.2rem; transition: all 0.25s; position: relative; overflow: hidden; }
+  .svc-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--teal); transform: scaleX(0); transition: transform 0.3s; transform-origin: left; }
+  .svc-card:hover::before { transform: scaleX(1); }
+  .svc-card:hover { box-shadow: 0 8px 30px rgba(0,122,138,0.1); }
+  .svc-emoji { font-size: 2rem; margin-bottom: 1rem; }
+  .svc-card h3 { font-family: 'Merriweather', serif; font-size: 1rem; color: var(--navy); margin-bottom: 0.6rem; font-weight: 700; }
+  .svc-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.7; }
+  .svc-link { color: var(--teal); font-size: 0.8rem; font-weight: 700; text-decoration: none; margin-top: 0.8rem; display: inline-block; }
+
+  /* EXPERIENCE */
+  .exp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .exp-img img { width: 100%; height: 480px; object-fit: cover; border-radius: 8px; }
+  .exp-content p { color: var(--muted); line-height: 1.9; font-size: 0.97rem; margin-bottom: 1rem; }
+  .exp-items { display: flex; flex-direction: column; gap: 1.2rem; margin-top: 1.5rem; }
+  .exp-item { display: flex; gap: 1rem; align-items: flex-start; }
+  .exp-dot { width: 32px; height: 32px; background: var(--teal-light); border: 2px solid var(--teal); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0; margin-top: 2px; }
+  .exp-item-text strong { font-size: 0.9rem; color: var(--navy); display: block; margin-bottom: 0.25rem; }
+  .exp-item-text span { font-size: 0.83rem; color: var(--muted); }
+
+  /* STATS */
+  .stats-strip { background: var(--teal); padding: 4rem 6vw; }
+  .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); text-align: center; }
+  .stat-item { padding: 1rem; }
+  .stat-num { font-family: 'Merriweather', serif; font-size: 2.8rem; color: #fff; font-weight: 700; }
+  .stat-lbl { font-size: 0.8rem; color: rgba(255,255,255,0.75); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 0.4rem; }
+
+  /* CONTACT */
+  .contact-bg { background: var(--cream); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 4rem; }
+  .contact-aside h3 { font-family: 'Merriweather', serif; font-size: 1.4rem; color: var(--navy); margin-bottom: 1.5rem; }
+  .ca-item { display: flex; gap: 1rem; margin-bottom: 1.5rem; }
+  .ca-icon { width: 44px; height: 44px; background: var(--teal-light); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+  .ca-item strong { display: block; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--teal); margin-bottom: 0.3rem; }
+  .ca-item p { font-size: 0.9rem; color: var(--text); }
+  .contact-form { background: #fff; padding: 2.5rem; border-radius: 8px; box-shadow: 0 4px 30px rgba(0,122,138,0.08); border-top: 4px solid var(--teal); }
+  .contact-form h3 { font-family: 'Merriweather', serif; font-size: 1.3rem; color: var(--navy); margin-bottom: 1.5rem; }
+  .cf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .cf-field { margin-bottom: 1rem; }
+  .cf-field label { display: block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 0.4rem; }
+  .cf-field input, .cf-field select, .cf-field textarea { width: 100%; border: 1px solid var(--border); border-radius: 6px; padding: 0.75rem 1rem; font-family: 'Nunito Sans', sans-serif; font-size: 0.9rem; color: var(--text); outline: none; transition: border-color 0.2s; }
+  .cf-field input:focus, .cf-field select:focus, .cf-field textarea:focus { border-color: var(--teal); }
+  .cf-field textarea { min-height: 90px; resize: vertical; }
+  .cf-btn { width: 100%; background: var(--teal); color: #fff; border: none; padding: 1rem; border-radius: 6px; font-family: 'Nunito Sans', sans-serif; font-size: 0.9rem; font-weight: 700; cursor: pointer; transition: background 0.2s; }
+  .cf-btn:hover { background: var(--teal-dark); }
+
+  /* REVIEWS */
+  .rev-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .rev-card { background: var(--cream); border-radius: 8px; padding: 2rem; border: 1px solid var(--border); }
+  .rev-stars { color: #f59e0b; font-size: 0.9rem; margin-bottom: 1rem; }
+  .rev-text { color: var(--muted); font-size: 0.88rem; line-height: 1.8; margin-bottom: 1.2rem; font-style: italic; }
+  .rev-name { font-weight: 700; font-size: 0.88rem; color: var(--navy); }
+  .rev-sub { font-size: 0.75rem; color: var(--muted); }
+
+  /* FOOTER */
+  footer { background: var(--navy); color: rgba(255,255,255,0.6); padding: 4rem 6vw 2rem; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+  .footer-brand p { font-size: 0.85rem; line-height: 1.8; margin-top: 1rem; }
+  footer h5 { color: var(--sky); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700; margin-bottom: 1.2rem; }
+  footer ul { list-style: none; }
+  footer ul li { margin-bottom: 0.55rem; }
+  footer ul a { color: rgba(255,255,255,0.55); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+  footer ul a:hover { color: #fff; }
+  .footer-logo-text { font-family: 'Merriweather', serif; color: #fff; font-size: 1.1rem; font-weight: 700; }
+  .fbot { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem; display: flex; justify-content: space-between; }
+  .fbot p { font-size: 0.78rem; color: rgba(255,255,255,0.35); }
+
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { display: none; }
+    .info-strip-inner { grid-template-columns: 1fr 1fr; }
+    .svc-grid { grid-template-columns: 1fr 1fr; }
+    .exp-grid, .contact-grid { grid-template-columns: 1fr; }
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+    .rev-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    nav ul { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="alert-bar">🏆 Est. 2015 · Serving Lucknow for 10+ Years · Walk-ins Welcome · <a href="#contact">Book Now</a></div>
+
+<div class="top-nav">
+  <div style="color:rgba(255,255,255,0.6);font-size:0.78rem;">Vikas Nagar, Lucknow, UP</div>
+  <div class="top-nav-links">
+    <a href="#">Patient Info</a>
+    <a href="#">Health Tips</a>
+    <a href="#">Emergency: +91 98XXX XXXXX</a>
+  </div>
+</div>
+
+<nav>
+  <a href="#" class="logo">
+    <div class="logo-mark">
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
+    </div>
+    <div class="logo-words">
+      <div class="logo-main">Indra Skin Clinic</div>
+      <div class="logo-est">Est. 2015 · Vikas Nagar, Lucknow</div>
+    </div>
+  </a>
+  <ul>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#reviews">Testimonials</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="appt-btn">Book Appointment</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="breadcrumb">Home <span>›</span> Dermatology Clinic <span>›</span> Lucknow</div>
+    <div class="est-badge">✦ Est. 2015 · 10 Years of Trust</div>
+    <h1>Your Neighbourhood<br>Skin Care Clinic<br>in <em>Lucknow</em></h1>
+    <p>Indra Skin Clinic has been a trusted name in dermatological care for over a decade, serving the communities of Vikas Nagar and beyond with expert skin and hair treatments.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="hbtn-primary">Book Appointment</a>
+      <a href="#services" class="hbtn-ghost">Our Services</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=900&q=90" alt="Clinic Interior">
+  </div>
+</section>
+
+<div class="info-strip">
+  <div class="info-strip-inner">
+    <div class="info-item"><div class="info-icon">📍</div><div class="info-text"><strong>Vikas Nagar, Lucknow</strong><span>Uttar Pradesh, India</span></div></div>
+    <div class="info-item"><div class="info-icon">🕐</div><div class="info-text"><strong>Mon–Sat: 10am–7pm</strong><span>Sunday by Appointment</span></div></div>
+    <div class="info-item"><div class="info-icon">📞</div><div class="info-text"><strong>+91 98XXX XXXXX</strong><span>Call or WhatsApp</span></div></div>
+    <div class="info-item"><div class="info-icon">🏆</div><div class="info-text"><strong>10+ Years Experience</strong><span>Est. 2015 · Trusted Clinic</span></div></div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section services-bg" id="services">
+  <div class="section-header">
+    <div class="stag">What We Offer</div>
+    <h2>Comprehensive Skin & Hair Solutions</h2>
+    <p>From routine skin check-ups to advanced cosmetic procedures — we provide a full range of dermatological services under one roof.</p>
+  </div>
+  <div class="svc-grid">
+    <div class="svc-card"><div class="svc-emoji">🩺</div><h3>General Dermatology</h3><p>Diagnosis and treatment of skin diseases including infections, rashes, eczema and allergy-related conditions.</p><a href="#" class="svc-link">Learn more →</a></div>
+    <div class="svc-card"><div class="svc-emoji">✨</div><h3>Cosmetic Treatments</h3><p>Face peels, microdermabrasion, skin rejuvenation and pigmentation correction for a radiant complexion.</p><a href="#" class="svc-link">Learn more →</a></div>
+    <div class="svc-card"><div class="svc-emoji">⚡</div><h3>Laser Therapy</h3><p>Advanced laser procedures for hair removal, skin resurfacing, scar reduction and pigmentation.</p><a href="#" class="svc-link">Learn more →</a></div>
+    <div class="svc-card"><div class="svc-emoji">💆</div><h3>Acne & Scar Clinic</h3><p>Specialised protocols for active acne management and long-term scar reduction therapy.</p><a href="#" class="svc-link">Learn more →</a></div>
+    <div class="svc-card"><div class="svc-emoji">🧴</div><h3>Hair Loss Treatment</h3><p>PRP therapy, scalp treatments and medical management of hair fall, alopecia and thinning hair.</p><a href="#" class="svc-link">Learn more →</a></div>
+    <div class="svc-card"><div class="svc-emoji">🌿</div><h3>Anti-Ageing Skin Care</h3><p>Botox, fillers and collagen stimulation treatments for age-reversal and skin firming.</p><a href="#" class="svc-link">Learn more →</a></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="exp-grid">
+    <div class="exp-img">
+      <img src="https://images.unsplash.com/photo-1551884831-bbf3cdc6469e?w=700&q=85" alt="Clinic Experience">
+    </div>
+    <div class="exp-content">
+      <div class="section-header">
+        <div class="stag">About the Clinic</div>
+        <h2>Trusted Skin Care Since 2015</h2>
+        <p>Indra Skin Clinic was established in 2015 in Vikas Nagar, Lucknow, with a mission to bring world-class dermatological care close to home. Over 10 years, we've built an unparalleled reputation for safe, effective, and compassionate skin care.</p>
+      </div>
+      <div class="exp-items">
+        <div class="exp-item"><div class="exp-dot">✓</div><div class="exp-item-text"><strong>Expert Clinical Team</strong><span>Led by experienced dermatologists with extensive training in medical and cosmetic dermatology.</span></div></div>
+        <div class="exp-item"><div class="exp-dot">✓</div><div class="exp-item-text"><strong>State-of-the-Art Equipment</strong><span>Modern laser systems, diagnostic tools and sterile treatment rooms for superior outcomes.</span></div></div>
+        <div class="exp-item"><div class="exp-dot">✓</div><div class="exp-item-text"><strong>Personalised Care Plans</strong><span>Every patient receives a tailored treatment plan based on their skin type, lifestyle and goals.</span></div></div>
+        <div class="exp-item"><div class="exp-dot">✓</div><div class="exp-item-text"><strong>Affordable & Transparent Pricing</strong><span>No hidden costs. We believe great skin care should be accessible to everyone in our community.</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-strip">
+  <div class="stats-grid">
+    <div class="stat-item"><div class="stat-num">10+</div><div class="stat-lbl">Years Established</div></div>
+    <div class="stat-item"><div class="stat-num">8K+</div><div class="stat-lbl">Happy Patients</div></div>
+    <div class="stat-item"><div class="stat-num">20+</div><div class="stat-lbl">Treatments Offered</div></div>
+    <div class="stat-item"><div class="stat-num">4.8★</div><div class="stat-lbl">Google Rating</div></div>
+  </div>
+</div>
+
+<!-- REVIEWS -->
+<section class="section" id="reviews">
+  <div class="section-header">
+    <div class="stag">Testimonials</div>
+    <h2>What Our Patients Say</h2>
+  </div>
+  <div class="rev-grid">
+    <div class="rev-card"><div class="rev-stars">★★★★★</div><div class="rev-text">"This clinic is a gem! Been coming here for 3 years for various skin issues. The staff is warm, the doctor is knowledgeable and the results speak for themselves. Highly recommended!"</div><div class="rev-name">Kavita Tiwari</div><div class="rev-sub">Pigmentation & Acne · Vikas Nagar</div></div>
+    <div class="rev-card"><div class="rev-stars">★★★★★</div><div class="rev-text">"Got laser hair removal done in 6 sessions and the results are permanent. Very professional approach. The clinic is hygienic and the pricing is very reasonable. Will definitely return!"</div><div class="rev-name">Rajat Pandey</div><div class="rev-sub">Laser Hair Removal · Lucknow</div></div>
+    <div class="rev-card"><div class="rev-stars">★★★★★</div><div class="rev-text">"I had severe eczema for years. After 2 months of treatment here, my skin has cleared up significantly. The doctor gave a very detailed explanation of my condition. 10/10!"</div><div class="rev-name">Sunita Gupta</div><div class="rev-sub">Eczema Management · Lucknow</div></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact-bg" id="contact">
+  <div class="section-header" style="text-align:center;">
+    <div class="stag" style="justify-content:center;">Contact Us</div>
+    <h2>Get In Touch With Our Clinic</h2>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-aside">
+      <h3>We're Here For You</h3>
+      <div class="ca-item"><div class="ca-icon">📍</div><div><strong>Address</strong><p>Vikas Nagar, Lucknow, UP 226022</p></div></div>
+      <div class="ca-item"><div class="ca-icon">📞</div><div><strong>Phone / WhatsApp</strong><p>+91 98XXX XXXXX</p></div></div>
+      <div class="ca-item"><div class="ca-icon">🕐</div><div><strong>Hours</strong><p>Monday – Saturday: 10:00 AM – 7:00 PM<br>Sunday: By Appointment Only</p></div></div>
+      <div class="ca-item"><div class="ca-icon">✉️</div><div><strong>Email</strong><p>indraSkinclinic@gmail.com</p></div></div>
+      <div class="ca-item"><div class="ca-icon">🏆</div><div><strong>Established</strong><p>2015 · Serving Lucknow for 10+ Years</p></div></div>
+    </div>
+    <div class="contact-form">
+      <h3>Book Your Appointment</h3>
+      <div class="cf-row">
+        <div class="cf-field"><label>First Name</label><input type="text" placeholder="Your name"></div>
+        <div class="cf-field"><label>Phone</label><input type="tel" placeholder="+91 98XXX XXXXX"></div>
+      </div>
+      <div class="cf-field"><label>Treatment Needed</label>
+        <select>
+          <option>Select treatment</option>
+          <option>Acne Treatment</option>
+          <option>Laser Hair Removal</option>
+          <option>Skin Brightening</option>
+          <option>Hair Loss / PRP</option>
+          <option>General Check-up</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="cf-row">
+        <div class="cf-field"><label>Preferred Date</label><input type="date"></div>
+        <div class="cf-field"><label>Preferred Time</label><select><option>Morning</option><option>Afternoon</option><option>Evening</option></select></div>
+      </div>
+      <div class="cf-field"><label>Your Concern</label><textarea placeholder="Tell us about your skin concern..."></textarea></div>
+      <button class="cf-btn">Book Appointment →</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand"><div class="footer-logo-text">Indra Skin Clinic</div><p>Your trusted neighbourhood dermatology clinic in Vikas Nagar, Lucknow. Established 2015. Providing expert, compassionate skin care for over a decade.</p></div>
+    <div><h5>Services</h5><ul><li><a href="#">General Dermatology</a></li><li><a href="#">Laser Therapy</a></li><li><a href="#">Acne Treatment</a></li><li><a href="#">Hair Loss / PRP</a></li><li><a href="#">Anti-Ageing</a></li></ul></div>
+    <div><h5>Information</h5><ul><li><a href="#">About the Clinic</a></li><li><a href="#">Patient Reviews</a></li><li><a href="#">Health Tips</a></li><li><a href="#">Gallery</a></li></ul></div>
+    <div><h5>Visit Us</h5><ul><li><a href="#">Vikas Nagar, Lucknow</a></li><li><a href="#">+91 98XXX XXXXX</a></li><li><a href="#">Mon–Sat 10am–7pm</a></li><li><a href="#">Book Online</a></li></ul></div>
+  </div>
+  <div class="fbot">
+    <p>© 2025 Indra Skin Clinic. All rights reserved. Est. 2015.</p>
+    <p>Lucknow · Uttar Pradesh · India</p>
+  </div>
+</footer>
+
+</body>
+</html>
