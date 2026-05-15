@@ -3,341 +3,567 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Indra Skin Clinic | Vikas Nagar, Lucknow</title>
-<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>Dr. Shaikh Mohd Kayum | Senior Dermatologist | Lucknow</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --teal: #007a8a;
-    --teal-dark: #005f6b;
-    --teal-light: #e0f4f7;
-    --sky: #00b4c8;
-    --navy: #1a2e3a;
-    --cream: #fafcfc;
-    --muted: #5a7282;
-    --border: #d0e4e8;
-    --text: #1e3040;
-  }
-  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body { font-family: 'Nunito Sans', sans-serif; background: #fff; color: var(--text); }
+:root{
+  --ink:#0d1b2a;--ink2:#1b2e40;
+  --brass:#9c6f2e;--brass2:#c49a50;--brass3:#e8c97a;
+  --slate:#2c4a5a;--slate2:#3d6175;
+  --ash:#f2f4f5;--paper:#fafbf8;--warm:#f5f0e8;
+  --mist:#dce8ed;--border:#ccd8dd;
+  --text:#1e3040;--muted:#607080;--white:#fff;
+}
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:var(--white);color:var(--text);overflow-x:hidden}
 
-  /* ALERT BAR */
-  .alert-bar { background: var(--teal); color: #fff; text-align: center; padding: 0.5rem 2rem; font-size: 0.8rem; }
-  .alert-bar a { color: #fff; font-weight: 700; }
+/* TOP RIBBON */
+.ribbon{background:var(--ink);padding:.5rem 5vw;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
+.ribbon-left{display:flex;align-items:center;gap:2rem}
+.ribbon-left a,.ribbon-left span{color:rgba(255,255,255,.45);font-size:.73rem;text-decoration:none;transition:.2s;font-weight:300}
+.ribbon-left a:hover{color:var(--brass3)}
+.ribbon-right{display:flex;gap:1.5rem;align-items:center}
+.ribbon-right a{color:rgba(255,255,255,.45);font-size:.73rem;text-decoration:none;font-weight:300;transition:.2s}
+.ribbon-right a:hover{color:var(--white)}
+.ribbon-sep{width:1px;height:14px;background:rgba(255,255,255,.12)}
 
-  /* TOP NAV */
-  .top-nav { background: var(--navy); padding: 0.5rem 6vw; display: flex; justify-content: space-between; align-items: center; }
-  .top-nav-links { display: flex; gap: 2rem; }
-  .top-nav a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.78rem; transition: color 0.2s; }
-  .top-nav a:hover { color: #fff; }
+/* NAV */
+nav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:200}
+.nav-inner{max-width:1300px;margin:0 auto;padding:0 5vw;height:76px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:1rem;text-decoration:none}
+.brand-crest{width:50px;height:50px;border-radius:50%;background:var(--ink);border:2px solid var(--brass2);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.brand-words{}
+.brand-name{font-family:'EB Garamond',serif;font-size:1.12rem;font-weight:700;color:var(--ink);letter-spacing:.01em;line-height:1.2}
+.brand-tag{font-size:.6rem;color:var(--brass);letter-spacing:2.5px;text-transform:uppercase;font-weight:500}
+nav ul{display:flex;list-style:none;gap:.2rem;align-items:center}
+nav ul a{padding:.5rem 1rem;font-size:.83rem;font-weight:500;color:var(--muted);text-decoration:none;border-radius:3px;transition:.2s;letter-spacing:.01em}
+nav ul a:hover{color:var(--slate);background:var(--ash)}
+.nav-book{background:var(--slate)!important;color:var(--white)!important;padding:.6rem 1.5rem!important;font-weight:600!important;border-radius:3px;transition:background .2s!important}
+.nav-book:hover{background:var(--ink)!important}
 
-  /* MAIN NAV */
-  nav { background: #fff; display: flex; align-items: center; justify-content: space-between; padding: 0 6vw; height: 80px; box-shadow: 0 2px 16px rgba(0,122,138,0.1); position: sticky; top: 0; z-index: 100; }
-  .logo { display: flex; align-items: center; gap: 0.8rem; text-decoration: none; }
-  .logo-mark { width: 52px; height: 52px; background: var(--teal); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
-  .logo-mark svg { width: 28px; height: 28px; fill: #fff; }
-  .logo-words { line-height: 1.2; }
-  .logo-main { font-family: 'Merriweather', serif; font-size: 1.05rem; color: var(--navy); font-weight: 700; }
-  .logo-est { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
-  nav ul { display: flex; gap: 0.2rem; list-style: none; }
-  nav ul a { padding: 0.5rem 1rem; border-radius: 4px; color: var(--text); text-decoration: none; font-size: 0.88rem; font-weight: 600; transition: all 0.2s; }
-  nav ul a:hover { background: var(--teal-light); color: var(--teal); }
-  .appt-btn { background: var(--teal); color: #fff !important; padding: 0.65rem 1.5rem; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 700; transition: background 0.2s; }
-  .appt-btn:hover { background: var(--teal-dark); }
+/* HERO */
+.hero{background:var(--ink);min-height:85vh;display:grid;grid-template-columns:1.1fr 1fr;position:relative;overflow:hidden}
+.hero-pattern{position:absolute;inset:0;opacity:.04;background-image:radial-gradient(circle,rgba(255,255,255,.8) 1px,transparent 1px);background-size:32px 32px;pointer-events:none}
+.hero-glow{position:absolute;width:700px;height:700px;background:radial-gradient(circle,rgba(44,74,90,.5),transparent 70%);border-radius:50%;right:-200px;top:50%;transform:translateY(-50%);pointer-events:none}
+.hero-left{padding:5.5rem 3rem 5rem 5vw;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2}
+.hero-provenance{display:flex;align-items:center;gap:.8rem;margin-bottom:2rem}
+.hp-line{width:30px;height:1px;background:var(--brass2)}
+.hp-text{font-size:.68rem;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--brass2)}
+.hero h1{font-family:'EB Garamond',serif;font-size:clamp(2.5rem,4.5vw,4.2rem);font-weight:700;color:var(--white);line-height:1.08;margin-bottom:.6rem;letter-spacing:-.01em}
+.hero h1 em{color:var(--brass3);font-style:italic}
+.hero-designation{font-size:.8rem;color:rgba(255,255,255,.35);letter-spacing:3px;text-transform:uppercase;font-weight:300;margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.07)}
+.hero-desc{font-size:.95rem;color:rgba(255,255,255,.55);line-height:2;max-width:470px;margin-bottom:2.5rem;font-weight:300}
+.hero-credentials{display:flex;flex-direction:column;gap:.6rem;margin-bottom:3rem}
+.hcred{display:flex;align-items:center;gap:.75rem;font-size:.84rem;color:rgba(255,255,255,.65);font-weight:400}
+.hcred-marker{width:20px;height:1px;background:var(--brass2);flex-shrink:0}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-brass{background:linear-gradient(135deg,var(--brass),var(--brass2));color:var(--ink);padding:1rem 2.4rem;border-radius:3px;text-decoration:none;font-weight:700;font-size:.87rem;transition:all .25s;letter-spacing:.04em;display:inline-block}
+.btn-brass:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(156,111,46,.4)}
+.btn-outline{border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.7);padding:1rem 2.4rem;border-radius:3px;text-decoration:none;font-weight:400;font-size:.87rem;transition:all .25s;display:inline-block;letter-spacing:.02em}
+.btn-outline:hover{border-color:var(--brass2);color:var(--brass3)}
 
-  /* HERO */
-  .hero { background: var(--navy); min-height: 70vh; display: grid; grid-template-columns: 1fr 1fr; position: relative; overflow: hidden; }
-  .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--teal), var(--sky)); }
-  .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 5rem 5vw 5rem 6vw; }
-  .breadcrumb { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; font-size: 0.75rem; color: rgba(255,255,255,0.5); }
-  .breadcrumb span { color: var(--sky); }
-  .hero-left h1 { font-family: 'Merriweather', serif; font-size: clamp(2rem, 3.5vw, 3rem); color: #fff; line-height: 1.25; margin-bottom: 0.8rem; font-weight: 700; }
-  .hero-left h1 em { color: var(--sky); font-style: normal; }
-  .est-badge { display: inline-flex; gap: 0.5rem; align-items: center; background: rgba(0,180,200,0.15); border: 1px solid rgba(0,180,200,0.3); color: var(--sky); padding: 0.35rem 0.9rem; border-radius: 20px; font-size: 0.75rem; font-weight: 700; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.08em; }
-  .hero-left p { color: rgba(255,255,255,0.65); line-height: 1.85; font-size: 0.97rem; max-width: 460px; margin-bottom: 2.5rem; }
-  .hero-btns { display: flex; gap: 1rem; }
-  .hbtn-primary { background: var(--teal); color: #fff; padding: 0.9rem 2rem; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 0.88rem; transition: background 0.2s; }
-  .hbtn-primary:hover { background: var(--teal-dark); }
-  .hbtn-ghost { border: 2px solid rgba(255,255,255,0.3); color: #fff; padding: 0.9rem 2rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.88rem; transition: all 0.2s; }
-  .hbtn-ghost:hover { border-color: var(--sky); color: var(--sky); }
-  .hero-right { position: relative; }
-  .hero-right img { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; }
-  .hero-right::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, var(--navy) 0%, transparent 40%); z-index: 1; }
+.hero-right{position:relative;display:flex;align-items:flex-end;justify-content:center;overflow:hidden}
+.hero-right-overlay{position:absolute;inset:0;background:linear-gradient(to right,var(--ink) 0%,rgba(13,27,42,.4) 50%,transparent 100%),linear-gradient(to top,var(--ink) 0%,transparent 40%);z-index:1}
+.hero-stat-card{position:absolute;bottom:2.5rem;left:2.5rem;right:2.5rem;z-index:3;display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);border-radius:4px;overflow:hidden;backdrop-filter:blur(8px)}
+.hsc-item{background:rgba(13,27,42,.75);padding:1.3rem 1.5rem;text-align:center}
+.hsc-num{font-family:'EB Garamond',serif;font-size:1.8rem;font-weight:700;color:var(--brass3);line-height:1}
+.hsc-lbl{font-size:.65rem;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:1.5px;margin-top:.3rem;font-weight:300}
 
-  /* INFO STRIP */
-  .info-strip { background: var(--teal-light); border-bottom: 1px solid var(--border); }
-  .info-strip-inner { display: grid; grid-template-columns: repeat(4, 1fr); padding: 0 6vw; }
-  .info-item { padding: 1.5rem 1rem; border-right: 1px solid var(--border); display: flex; align-items: center; gap: 0.8rem; }
-  .info-item:last-child { border-right: none; }
-  .info-icon { font-size: 1.3rem; }
-  .info-text strong { display: block; font-size: 0.82rem; color: var(--teal-dark); font-weight: 700; }
-  .info-text span { font-size: 0.78rem; color: var(--muted); }
+/* QUAL STRIP */
+.qs{background:var(--warm);border-bottom:1px solid rgba(156,111,46,.15)}
+.qs-inner{max-width:1300px;margin:0 auto;padding:0 5vw;display:grid;grid-template-columns:repeat(4,1fr)}
+.qs-item{padding:1.8rem 1.5rem;border-right:1px solid rgba(156,111,46,.12);display:flex;align-items:center;gap:1rem}
+.qs-item:last-child{border-right:none}
+.qs-icon{width:44px;height:44px;background:var(--ink);border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.qs-text strong{display:block;font-family:'EB Garamond',serif;font-size:1.05rem;font-weight:500;color:var(--ink);margin-bottom:.1rem}
+.qs-text span{font-size:.73rem;color:var(--muted);font-weight:300;letter-spacing:.2px}
 
-  /* SECTION */
-  .section { padding: 80px 6vw; }
-  .section-header { margin-bottom: 3rem; }
-  .stag { color: var(--teal); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.6rem; }
-  .stag::before { content: ''; width: 24px; height: 2px; background: var(--teal); }
-  .section-header h2 { font-family: 'Merriweather', serif; font-size: clamp(1.6rem, 2.8vw, 2.4rem); color: var(--navy); }
-  .section-header p { color: var(--muted); font-size: 0.97rem; line-height: 1.8; margin-top: 0.8rem; max-width: 580px; }
+/* SECTIONS */
+.section{padding:7rem 5vw}
+.container{max-width:1300px;margin:0 auto}
+.sh{margin-bottom:3.5rem}
+.sh.center{text-align:center}.sh.center .sh-rule{margin:0 auto}
+.sh-over{display:flex;align-items:center;gap:.7rem;font-size:.68rem;font-weight:600;letter-spacing:3.5px;text-transform:uppercase;color:var(--brass);margin-bottom:.8rem}
+.sh-over::before{content:'';width:22px;height:1px;background:var(--brass)}
+.sh.center .sh-over{justify-content:center}
+.sh-h2{font-family:'EB Garamond',serif;font-size:clamp(1.9rem,3vw,2.8rem);font-weight:700;color:var(--ink);line-height:1.2;letter-spacing:-.01em}
+.sh-h2 em{color:var(--slate);font-style:italic}
+.sh-rule{width:36px;height:2px;background:linear-gradient(90deg,var(--brass),transparent);margin:.9rem 0 .7rem}
+.sh-p{font-size:.92rem;color:var(--muted);line-height:2;font-weight:300;max-width:560px}
+.sh.center .sh-p{margin:0 auto}
 
-  /* SERVICES */
-  .services-bg { background: var(--cream); }
-  .svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); }
-  .svc-card { background: #fff; padding: 2.2rem; transition: all 0.25s; position: relative; overflow: hidden; }
-  .svc-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--teal); transform: scaleX(0); transition: transform 0.3s; transform-origin: left; }
-  .svc-card:hover::before { transform: scaleX(1); }
-  .svc-card:hover { box-shadow: 0 8px 30px rgba(0,122,138,0.1); }
-  .svc-emoji { font-size: 2rem; margin-bottom: 1rem; }
-  .svc-card h3 { font-family: 'Merriweather', serif; font-size: 1rem; color: var(--navy); margin-bottom: 0.6rem; font-weight: 700; }
-  .svc-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.7; }
-  .svc-link { color: var(--teal); font-size: 0.8rem; font-weight: 700; text-decoration: none; margin-top: 0.8rem; display: inline-block; }
+/* SERVICES */
+.svc-bg{background:var(--ash)}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--border);gap:0;background:var(--border)}
+.svc-card{background:var(--white);padding:2.5rem;position:relative;overflow:hidden;transition:all .3s;border-right:0;border-bottom:0}
+.svc-card-accent{position:absolute;top:0;left:0;width:3px;height:0;background:linear-gradient(180deg,var(--brass),var(--slate));transition:height .4s}
+.svc-card:hover .svc-card-accent{height:100%}
+.svc-card:hover{background:var(--paper)}
+.svc-ordinal{font-family:'EB Garamond',serif;font-size:4rem;color:rgba(44,74,90,.06);font-weight:700;line-height:1;margin-bottom:.3rem}
+.svc-em{font-size:1.8rem;margin-bottom:1rem;display:block}
+.svc-card h3{font-family:'EB Garamond',serif;font-size:1.1rem;font-weight:500;color:var(--ink);margin-bottom:.6rem}
+.svc-card p{font-size:.83rem;color:var(--muted);line-height:1.85;font-weight:300}
+.svc-badge{display:inline-block;border:1px solid rgba(156,111,46,.3);color:var(--brass);font-size:.62rem;font-weight:600;padding:.2rem .75rem;border-radius:2px;margin-top:.9rem;letter-spacing:.8px;text-transform:uppercase}
 
-  /* EXPERIENCE */
-  .exp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
-  .exp-img img { width: 100%; height: 480px; object-fit: cover; border-radius: 8px; }
-  .exp-content p { color: var(--muted); line-height: 1.9; font-size: 0.97rem; margin-bottom: 1rem; }
-  .exp-items { display: flex; flex-direction: column; gap: 1.2rem; margin-top: 1.5rem; }
-  .exp-item { display: flex; gap: 1rem; align-items: flex-start; }
-  .exp-dot { width: 32px; height: 32px; background: var(--teal-light); border: 2px solid var(--teal); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0; margin-top: 2px; }
-  .exp-item-text strong { font-size: 0.9rem; color: var(--navy); display: block; margin-bottom: 0.25rem; }
-  .exp-item-text span { font-size: 0.83rem; color: var(--muted); }
+/* PROFILE */
+.profile-bg{background:var(--white)}
+.profile-grid{display:grid;grid-template-columns:5fr 6fr;gap:6rem;align-items:start}
+.portrait-wrap{position:relative;top:1rem}
+.portrait-box{background:linear-gradient(160deg,var(--mist),#c8dce5);border-radius:4px;height:560px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:.6rem;position:relative;overflow:hidden}
+.portrait-box::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--brass),var(--brass2),transparent)}
+.portrait-box .p-ico{font-size:5rem;opacity:.25;z-index:1}
+.portrait-box .p-label{font-size:.68rem;color:var(--slate);font-weight:500;letter-spacing:2px;text-transform:uppercase;opacity:.5;z-index:1}
+.portrait-badge{position:absolute;bottom:1.8rem;left:1.8rem;background:var(--ink);border-radius:3px;padding:1.2rem 1.6rem;border-bottom:2px solid var(--brass)}
+.portrait-badge h4{font-family:'EB Garamond',serif;font-size:2.2rem;font-weight:700;color:var(--brass3);line-height:1}
+.portrait-badge p{font-size:.7rem;color:rgba(255,255,255,.45);font-weight:300;margin-top:.2rem;letter-spacing:.5px}
 
-  /* STATS */
-  .stats-strip { background: var(--teal); padding: 4rem 6vw; }
-  .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); text-align: center; }
-  .stat-item { padding: 1rem; }
-  .stat-num { font-family: 'Merriweather', serif; font-size: 2.8rem; color: #fff; font-weight: 700; }
-  .stat-lbl { font-size: 0.8rem; color: rgba(255,255,255,0.75); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 0.4rem; }
+.profile-content .sh-over{margin-bottom:.5rem}
+.profile-content .sh-h2{margin-bottom:.5rem}
+.profile-bio{font-size:.92rem;color:var(--muted);line-height:2;font-weight:300;margin-bottom:.9rem}
+.qual-table{margin:2rem 0;border:1px solid var(--border);border-radius:3px;overflow:hidden}
+.qt-head{background:var(--ink);padding:.75rem 1.2rem;font-size:.68rem;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.45)}
+.qt-row{display:flex;align-items:center;gap:1rem;padding:.9rem 1.2rem;border-bottom:1px solid var(--border);background:var(--white)}
+.qt-row:last-child{border-bottom:none}
+.qt-row:hover{background:var(--warm)}
+.qt-icon{width:32px;height:32px;background:var(--warm);border:1px solid rgba(156,111,46,.2);border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0}
+.qt-name{font-size:.9rem;font-weight:600;color:var(--ink);flex:1}
+.qt-detail{font-size:.75rem;color:var(--muted);font-weight:300;text-align:right}
+.expertise-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.8rem}
+.etag{background:var(--ash);border:1px solid var(--border);color:var(--slate);font-size:.74rem;font-weight:500;padding:.35rem .9rem;border-radius:2px;letter-spacing:.2px;transition:.2s}
+.etag:hover{background:var(--mist);border-color:var(--slate2)}
 
-  /* CONTACT */
-  .contact-bg { background: var(--cream); }
-  .contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 4rem; }
-  .contact-aside h3 { font-family: 'Merriweather', serif; font-size: 1.4rem; color: var(--navy); margin-bottom: 1.5rem; }
-  .ca-item { display: flex; gap: 1rem; margin-bottom: 1.5rem; }
-  .ca-icon { width: 44px; height: 44px; background: var(--teal-light); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
-  .ca-item strong { display: block; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--teal); margin-bottom: 0.3rem; }
-  .ca-item p { font-size: 0.9rem; color: var(--text); }
-  .contact-form { background: #fff; padding: 2.5rem; border-radius: 8px; box-shadow: 0 4px 30px rgba(0,122,138,0.08); border-top: 4px solid var(--teal); }
-  .contact-form h3 { font-family: 'Merriweather', serif; font-size: 1.3rem; color: var(--navy); margin-bottom: 1.5rem; }
-  .cf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-  .cf-field { margin-bottom: 1rem; }
-  .cf-field label { display: block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 0.4rem; }
-  .cf-field input, .cf-field select, .cf-field textarea { width: 100%; border: 1px solid var(--border); border-radius: 6px; padding: 0.75rem 1rem; font-family: 'Nunito Sans', sans-serif; font-size: 0.9rem; color: var(--text); outline: none; transition: border-color 0.2s; }
-  .cf-field input:focus, .cf-field select:focus, .cf-field textarea:focus { border-color: var(--teal); }
-  .cf-field textarea { min-height: 90px; resize: vertical; }
-  .cf-btn { width: 100%; background: var(--teal); color: #fff; border: none; padding: 1rem; border-radius: 6px; font-family: 'Nunito Sans', sans-serif; font-size: 0.9rem; font-weight: 700; cursor: pointer; transition: background 0.2s; }
-  .cf-btn:hover { background: var(--teal-dark); }
+/* WHY */
+.why-bg{background:var(--ink);padding:6rem 5vw}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.06);margin-top:1rem;border:1px solid rgba(255,255,255,.06)}
+.wc{background:var(--ink);padding:2.5rem 2rem;transition:all .3s}
+.wc:hover{background:rgba(44,74,90,.5)}
+.wc-num{font-family:'EB Garamond',serif;font-size:2.5rem;font-weight:700;color:rgba(196,154,80,.2);line-height:1;margin-bottom:1rem}
+.wc-icon{font-size:1.6rem;margin-bottom:1.2rem;display:block}
+.wc h4{font-family:'EB Garamond',serif;font-size:1.05rem;font-weight:500;color:var(--white);margin-bottom:.6rem}
+.wc p{font-size:.8rem;color:rgba(255,255,255,.4);line-height:1.85;font-weight:300}
 
-  /* REVIEWS */
-  .rev-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-  .rev-card { background: var(--cream); border-radius: 8px; padding: 2rem; border: 1px solid var(--border); }
-  .rev-stars { color: #f59e0b; font-size: 0.9rem; margin-bottom: 1rem; }
-  .rev-text { color: var(--muted); font-size: 0.88rem; line-height: 1.8; margin-bottom: 1.2rem; font-style: italic; }
-  .rev-name { font-weight: 700; font-size: 0.88rem; color: var(--navy); }
-  .rev-sub { font-size: 0.75rem; color: var(--muted); }
+/* STATS */
+.stats-bg{background:var(--slate);padding:4.5rem 5vw}
+.stats-inner{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);text-align:center;gap:1px;background:rgba(255,255,255,.1)}
+.stat-block{background:var(--slate);padding:2.8rem 2rem}
+.stat-n{font-family:'EB Garamond',serif;font-size:3.2rem;color:var(--brass3);font-weight:700;line-height:1}
+.stat-l{font-size:.72rem;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:1.5px;margin-top:.5rem;font-weight:300}
 
-  /* FOOTER */
-  footer { background: var(--navy); color: rgba(255,255,255,0.6); padding: 4rem 6vw 2rem; }
-  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
-  .footer-brand p { font-size: 0.85rem; line-height: 1.8; margin-top: 1rem; }
-  footer h5 { color: var(--sky); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700; margin-bottom: 1.2rem; }
-  footer ul { list-style: none; }
-  footer ul li { margin-bottom: 0.55rem; }
-  footer ul a { color: rgba(255,255,255,0.55); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
-  footer ul a:hover { color: #fff; }
-  .footer-logo-text { font-family: 'Merriweather', serif; color: #fff; font-size: 1.1rem; font-weight: 700; }
-  .fbot { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem; display: flex; justify-content: space-between; }
-  .fbot p { font-size: 0.78rem; color: rgba(255,255,255,0.35); }
+/* TESTIMONIALS */
+.testi-bg{background:var(--paper)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.tc{background:var(--white);border:1px solid var(--border);border-radius:3px;padding:2.2rem;transition:all .3s;position:relative}
+.tc-mark{position:absolute;top:1.5rem;right:1.8rem;font-family:'EB Garamond',serif;font-size:5rem;color:rgba(44,74,90,.05);line-height:1;font-weight:700}
+.tc:hover{box-shadow:0 10px 35px rgba(0,0,0,.07);border-color:rgba(156,111,46,.2)}
+.tc-stars{color:var(--brass2);font-size:.8rem;letter-spacing:3px;margin-bottom:1rem}
+.tc-text{font-family:'EB Garamond',serif;font-size:1.02rem;font-style:italic;color:var(--ink2);line-height:1.8;margin-bottom:1.5rem;font-weight:400}
+.tc-footer{border-top:1px solid var(--border);padding-top:1.1rem;display:flex;align-items:center;gap:.9rem}
+.tc-av{width:38px;height:38px;background:var(--slate);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--white);font-size:.8rem;flex-shrink:0}
+.tc-name{font-size:.86rem;font-weight:600;color:var(--ink)}
+.tc-cond{font-size:.72rem;color:var(--muted);font-weight:300;margin-top:.1rem}
 
-  @media (max-width: 900px) {
-    .hero { grid-template-columns: 1fr; }
-    .hero-right { display: none; }
-    .info-strip-inner { grid-template-columns: 1fr 1fr; }
-    .svc-grid { grid-template-columns: 1fr 1fr; }
-    .exp-grid, .contact-grid { grid-template-columns: 1fr; }
-    .stats-grid { grid-template-columns: 1fr 1fr; }
-    .rev-grid { grid-template-columns: 1fr; }
-    .footer-grid { grid-template-columns: 1fr 1fr; }
-    nav ul { display: none; }
-  }
+/* BOOKING */
+.booking-bg{background:var(--white);padding:7rem 5vw}
+.booking-inner{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:1fr 1.25fr;gap:6rem;align-items:start}
+.book-left .sh-h2{margin-bottom:1rem}
+.book-left p{font-size:.9rem;color:var(--muted);line-height:1.95;font-weight:300;margin-bottom:2rem}
+.ci-list{display:flex;flex-direction:column;gap:.75rem;margin-bottom:2rem}
+.ci{display:flex;align-items:center;gap:.9rem;padding:.95rem 1.2rem;border:1px solid var(--border);border-radius:3px;background:var(--ash);transition:border-color .2s}
+.ci:hover{border-color:rgba(156,111,46,.25)}
+.ci-ico{width:38px;height:38px;background:var(--slate);border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0}
+.ci-lbl{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--muted)}
+.ci-val{font-size:.85rem;font-weight:600;color:var(--ink)}
+.hours-panel{border:1px solid var(--border);border-radius:3px;overflow:hidden}
+.hp-header{background:var(--ink);padding:.8rem 1.3rem;display:flex;align-items:center;gap:.5rem}
+.hp-header span{font-size:.68rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.45)}
+.hp-row{display:flex;justify-content:space-between;align-items:center;padding:.7rem 1.3rem;border-bottom:1px solid var(--border);font-size:.82rem}
+.hp-row:last-child{border-bottom:none}
+.hp-row span:first-child{color:var(--muted);font-weight:300}
+.hp-row span:last-child{color:var(--ink);font-weight:600}
+.hp-row.today{background:var(--warm)}
+
+.form-card{background:var(--paper);border:1px solid var(--border);border-radius:3px;padding:2.8rem;border-top:3px solid var(--brass)}
+.form-card h3{font-family:'EB Garamond',serif;font-size:1.7rem;font-weight:700;color:var(--ink);margin-bottom:.3rem;letter-spacing:-.01em}
+.form-card>p{font-size:.78rem;color:var(--muted);margin-bottom:2rem;font-weight:300}
+.fg{display:flex;flex-direction:column;gap:.35rem;margin-bottom:.85rem}
+.fg label{font-size:.65rem;font-weight:700;color:var(--ink2);text-transform:uppercase;letter-spacing:.8px}
+.fg input,.fg select,.fg textarea{border:1px solid var(--border);border-radius:3px;padding:.72rem 1rem;font-family:'Outfit',sans-serif;font-size:.86rem;color:var(--text);background:var(--white);width:100%;transition:border-color .2s;font-weight:400}
+.fg input:focus,.fg select:focus,.fg textarea:focus{outline:none;border-color:var(--slate);box-shadow:0 0 0 3px rgba(44,74,90,.07)}
+.fg textarea{min-height:82px;resize:vertical}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.fsub{width:100%;background:var(--slate);color:var(--white);border:none;padding:1rem;border-radius:3px;font-family:'Outfit',sans-serif;font-weight:600;font-size:.9rem;cursor:pointer;transition:all .25s;letter-spacing:.04em}
+.fsub:hover{background:var(--ink);transform:translateY(-2px)}
+
+/* FOOTER */
+footer{background:var(--ink);padding:4.5rem 5vw 2rem}
+.footer-inner{max-width:1300px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;margin-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.06)}
+.fbrand-name{font-family:'EB Garamond',serif;font-size:1.25rem;font-weight:700;color:var(--white);margin-bottom:.3rem}
+.fbrand-sub{font-size:.62rem;color:var(--brass);letter-spacing:2px;text-transform:uppercase;margin-bottom:1rem}
+.fbrand-desc{font-size:.81rem;color:rgba(255,255,255,.3);line-height:1.8;font-weight:300;max-width:280px}
+.fc h5{font-size:.64rem;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:1.2rem}
+.fc a{display:block;color:rgba(255,255,255,.45);font-size:.82rem;text-decoration:none;margin-bottom:.5rem;font-weight:300;transition:.2s}
+.fc a:hover{color:var(--brass3)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.8rem}
+.footer-bottom p{font-size:.73rem;color:rgba(255,255,255,.2);font-weight:300}
+.footer-bottom .fb-acc{color:var(--brass2)!important;opacity:.6}
+
+/* TOAST */
+.toast{position:fixed;bottom:2rem;right:2rem;background:var(--white);border-left:3px solid var(--slate);color:var(--ink);padding:1rem 1.5rem;border-radius:3px;font-size:.84rem;font-weight:500;transform:translateY(120px);opacity:0;transition:all .4s;z-index:9999;box-shadow:0 8px 30px rgba(0,0,0,.12)}
+.toast.show{transform:translateY(0);opacity:1}
+
+/* RESPONSIVE */
+@media(max-width:1050px){
+  .hero{grid-template-columns:1fr}.hero-right{display:none}
+  .profile-grid,.booking-inner{grid-template-columns:1fr}
+  .qs-inner{grid-template-columns:1fr 1fr}
+  .why-grid,.stats-inner{grid-template-columns:1fr 1fr}
+  .svc-grid,.testi-grid{grid-template-columns:1fr 1fr}
+  .footer-top{grid-template-columns:1fr 1fr}
+  nav ul{display:none}
+  .ribbon-right{display:none}
+}
+@media(max-width:600px){
+  .svc-grid,.testi-grid,.why-grid,.g2,.qs-inner{grid-template-columns:1fr}
+  .stats-inner{grid-template-columns:1fr 1fr}
+}
 </style>
 </head>
 <body>
 
-<div class="alert-bar">🏆 Est. 2015 · Serving Lucknow for 10+ Years · Walk-ins Welcome · <a href="#contact">Book Now</a></div>
-
-<div class="top-nav">
-  <div style="color:rgba(255,255,255,0.6);font-size:0.78rem;">Vikas Nagar, Lucknow, UP</div>
-  <div class="top-nav-links">
-    <a href="#">Patient Info</a>
-    <a href="#">Health Tips</a>
-    <a href="#">Emergency: +91 98XXX XXXXX</a>
+<!-- RIBBON -->
+<div class="ribbon">
+  <div class="ribbon-left">
+    <span>📍 Lucknow, Uttar Pradesh</span>
+    <div class="ribbon-sep"></div>
+    <span>MBBS · MD Dermatology</span>
+    <div class="ribbon-sep"></div>
+    <span>37 Years of Specialist Practice</span>
+  </div>
+  <div class="ribbon-right">
+    <a href="#">Patient Information</a>
+    <a href="#booking">Book Consultation</a>
   </div>
 </div>
 
+<!-- NAV -->
 <nav>
-  <a href="#" class="logo">
-    <div class="logo-mark">
-      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
-    </div>
-    <div class="logo-words">
-      <div class="logo-main">Indra Skin Clinic</div>
-      <div class="logo-est">Est. 2015 · Vikas Nagar, Lucknow</div>
-    </div>
-  </a>
-  <ul>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#reviews">Testimonials</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <a href="#contact" class="appt-btn">Book Appointment</a>
+  <div class="nav-inner">
+    <a href="#" class="brand">
+      <div class="brand-crest">🩺</div>
+      <div class="brand-words">
+        <div class="brand-name">Dr. Shaikh Mohd Kayum</div>
+        <div class="brand-tag">Senior Dermatologist · Lucknow</div>
+      </div>
+    </a>
+    <ul>
+      <li><a href="#services">Treatments</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#booking" class="nav-book">Book Appointment</a></li>
+    </ul>
+  </div>
 </nav>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero" id="home">
+  <div class="hero-pattern"></div>
+  <div class="hero-glow"></div>
   <div class="hero-left">
-    <div class="breadcrumb">Home <span>›</span> Dermatology Clinic <span>›</span> Lucknow</div>
-    <div class="est-badge">✦ Est. 2015 · 10 Years of Trust</div>
-    <h1>Your Neighbourhood<br>Skin Care Clinic<br>in <em>Lucknow</em></h1>
-    <p>Indra Skin Clinic has been a trusted name in dermatological care for over a decade, serving the communities of Vikas Nagar and beyond with expert skin and hair treatments.</p>
-    <div class="hero-btns">
-      <a href="#contact" class="hbtn-primary">Book Appointment</a>
-      <a href="#services" class="hbtn-ghost">Our Services</a>
+    <div class="hero-provenance"><div class="hp-line"></div><div class="hp-text">Dermatologist · Lucknow · Est. 37 Years</div></div>
+    <h1>Dr. <em>Shaikh</em><br>Mohd Kayum</h1>
+    <div class="hero-designation">MBBS &nbsp;·&nbsp; MD Dermatology &nbsp;·&nbsp; Lucknow, Uttar Pradesh</div>
+    <p class="hero-desc">A name synonymous with dermatological expertise in Lucknow — Dr. Shaikh Mohd Kayum has dedicated 37 years to delivering precise diagnosis and effective skin and hair care for patients across Uttar Pradesh.</p>
+    <div class="hero-credentials">
+      <div class="hcred"><div class="hcred-marker"></div>MBBS – Bachelor of Medicine & Bachelor of Surgery</div>
+      <div class="hcred"><div class="hcred-marker"></div>MD – Dermatology (Post-Graduate Specialist)</div>
+      <div class="hcred"><div class="hcred-marker"></div>37 Years of Uninterrupted Specialist Practice</div>
+      <div class="hcred"><div class="hcred-marker"></div>Private Clinic · Lucknow</div>
+    </div>
+    <div class="hero-actions">
+      <a href="#booking" class="btn-brass">Book a Consultation</a>
+      <a href="#services" class="btn-outline">View Treatments</a>
     </div>
   </div>
   <div class="hero-right">
-    <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=900&q=90" alt="Clinic Interior">
+    <div class="hero-right-overlay"></div>
+    <div class="hero-stat-card">
+      <div class="hsc-item"><div class="hsc-num">37</div><div class="hsc-lbl">Years Experience</div></div>
+      <div class="hsc-item"><div class="hsc-num">MBBS<br><span style="font-size:1rem">MD</span></div><div class="hsc-lbl">Qualifications</div></div>
+      <div class="hsc-item"><div class="hsc-num">5★</div><div class="hsc-lbl">Patient Rating</div></div>
+    </div>
   </div>
 </section>
 
-<div class="info-strip">
-  <div class="info-strip-inner">
-    <div class="info-item"><div class="info-icon">📍</div><div class="info-text"><strong>Vikas Nagar, Lucknow</strong><span>Uttar Pradesh, India</span></div></div>
-    <div class="info-item"><div class="info-icon">🕐</div><div class="info-text"><strong>Mon–Sat: 10am–7pm</strong><span>Sunday by Appointment</span></div></div>
-    <div class="info-item"><div class="info-icon">📞</div><div class="info-text"><strong>+91 98XXX XXXXX</strong><span>Call or WhatsApp</span></div></div>
-    <div class="info-item"><div class="info-icon">🏆</div><div class="info-text"><strong>10+ Years Experience</strong><span>Est. 2015 · Trusted Clinic</span></div></div>
+<!-- QUAL STRIP -->
+<div class="qs">
+  <div class="qs-inner">
+    <div class="qs-item"><div class="qs-icon">🎓</div><div class="qs-text"><strong>MBBS</strong><span>Medical Degree</span></div></div>
+    <div class="qs-item"><div class="qs-icon">🏥</div><div class="qs-text"><strong>MD – Dermatology</strong><span>Specialist Post-Graduate</span></div></div>
+    <div class="qs-item"><div class="qs-icon">⭐</div><div class="qs-text"><strong>37 Years Practice</strong><span>Lucknow's Senior Dermatologist</span></div></div>
+    <div class="qs-item"><div class="qs-icon">📍</div><div class="qs-text"><strong>Private Clinic</strong><span>Lucknow, Uttar Pradesh</span></div></div>
   </div>
 </div>
 
 <!-- SERVICES -->
-<section class="section services-bg" id="services">
-  <div class="section-header">
-    <div class="stag">What We Offer</div>
-    <h2>Comprehensive Skin & Hair Solutions</h2>
-    <p>From routine skin check-ups to advanced cosmetic procedures — we provide a full range of dermatological services under one roof.</p>
-  </div>
-  <div class="svc-grid">
-    <div class="svc-card"><div class="svc-emoji">🩺</div><h3>General Dermatology</h3><p>Diagnosis and treatment of skin diseases including infections, rashes, eczema and allergy-related conditions.</p><a href="#" class="svc-link">Learn more →</a></div>
-    <div class="svc-card"><div class="svc-emoji">✨</div><h3>Cosmetic Treatments</h3><p>Face peels, microdermabrasion, skin rejuvenation and pigmentation correction for a radiant complexion.</p><a href="#" class="svc-link">Learn more →</a></div>
-    <div class="svc-card"><div class="svc-emoji">⚡</div><h3>Laser Therapy</h3><p>Advanced laser procedures for hair removal, skin resurfacing, scar reduction and pigmentation.</p><a href="#" class="svc-link">Learn more →</a></div>
-    <div class="svc-card"><div class="svc-emoji">💆</div><h3>Acne & Scar Clinic</h3><p>Specialised protocols for active acne management and long-term scar reduction therapy.</p><a href="#" class="svc-link">Learn more →</a></div>
-    <div class="svc-card"><div class="svc-emoji">🧴</div><h3>Hair Loss Treatment</h3><p>PRP therapy, scalp treatments and medical management of hair fall, alopecia and thinning hair.</p><a href="#" class="svc-link">Learn more →</a></div>
-    <div class="svc-card"><div class="svc-emoji">🌿</div><h3>Anti-Ageing Skin Care</h3><p>Botox, fillers and collagen stimulation treatments for age-reversal and skin firming.</p><a href="#" class="svc-link">Learn more →</a></div>
+<section class="section svc-bg" id="services">
+  <div class="container">
+    <div class="sh">
+      <div class="sh-over">Specialist Treatments</div>
+      <div class="sh-h2">Comprehensive Skin &<br><em>Hair Care</em></div>
+      <div class="sh-rule"></div>
+      <p class="sh-p">With 37 years of clinical depth, Dr. Kayum offers expert management of the full spectrum of dermatological conditions — from complex chronic skin diseases to advanced cosmetic procedures.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card"><div class="svc-card-accent"></div><div class="svc-ordinal">01</div><span class="svc-em">🩺</span><h3>Medical Dermatology</h3><p>Expert diagnosis and long-term management of psoriasis, eczema, vitiligo, lupus, urticaria, pemphigus, and all chronic skin conditions.</p><span class="svc-badge">Medical</span></div>
+      <div class="svc-card"><div class="svc-card-accent"></div><div class="svc-ordinal">02</div><span class="svc-em">✨</span><h3>Cosmetic Dermatology</h3><p>Chemical peels, microdermabrasion, skin brightening, pigmentation correction, and comprehensive facial rejuvenation programmes.</p><span class="svc-badge">Aesthetic</span></div>
+      <div class="svc-card"><div class="svc-card-accent"></div><div class="svc-ordinal">03</div><span class="svc-em">⚡</span><h3>Laser Treatments</h3><p>Advanced laser procedures for hair removal, skin resurfacing, scar revision, pigmentation disorders, and vascular lesions.</p><span class="svc-badge">Advanced</span></div>
+      <div class="svc-card"><div class="svc-card-accent"></div><div class="svc-ordinal">04</div><span class="svc-em">💆</span><h3>Acne & Scar Clinic</h3><p>Evidence-based medical protocols for active acne management, post-acne hyperpigmentation, and surgical scar revision therapy.</p><span class="svc-badge">Dermatology</span></div>
+      <div class="svc-card"><div class="svc-card-accent"></div><div class="svc-ordinal">05</div><span class="svc-em">🧴</span><h3>Hair & Scalp Disorders</h3><p>Specialist treatment of androgenetic alopecia, alopecia areata, scarring alopecias, scalp diseases, and PRP hair restoration.</p><span class="svc-badge">Trichology</span></div>
+      <div class="svc-card"><div class="svc-card-accent"></div><div class="svc-ordinal">06</div><span class="svc-em">💉</span><h3>Anti-Ageing & Injectables</h3><p>Botox, dermal fillers, collagen biostimulators, and mesotherapy for natural-looking age reversal and skin firming.</p><span class="svc-badge">Anti-Ageing</span></div>
+    </div>
   </div>
 </section>
 
-<!-- ABOUT -->
-<section class="section" id="about">
-  <div class="exp-grid">
-    <div class="exp-img">
-      <img src="https://images.unsplash.com/photo-1551884831-bbf3cdc6469e?w=700&q=85" alt="Clinic Experience">
+<!-- PROFILE -->
+<section class="section profile-bg" id="about">
+  <div class="container">
+    <div class="profile-grid">
+      <div class="portrait-wrap">
+        <div class="portrait-box">
+          <div class="p-ico">👨‍⚕️</div>
+          <p class="p-label">Dr. Shaikh Mohd Kayum</p>
+          <div class="portrait-badge">
+            <h4>37</h4>
+            <p>Years of Excellence</p>
+          </div>
+        </div>
+      </div>
+      <div class="profile-content">
+        <div class="sh-over">About the Doctor</div>
+        <div class="sh-h2">A Legacy of <em>Dermatological</em> Excellence</div>
+        <div class="sh-rule"></div>
+        <p class="profile-bio">Dr. Shaikh Mohd Kayum is one of Lucknow's most experienced and respected dermatologists, having practiced specialist skin and hair medicine for 37 uninterrupted years. His private clinic in Lucknow has been a trusted destination for patients seeking expert dermatological care.</p>
+        <p class="profile-bio">Holding both MBBS and MD (Dermatology) degrees, Dr. Kayum brings exceptional diagnostic depth across medical dermatology, complex inflammatory skin disorders, hair pathology, and cosmetic dermatology. His decades of clinical experience translate into accurate, effective, and personalised treatment for every patient.</p>
+        <div class="qual-table">
+          <div class="qt-head">Academic Qualifications</div>
+          <div class="qt-row">
+            <div class="qt-icon">🎓</div>
+            <div class="qt-name">MBBS</div>
+            <div class="qt-detail">Bachelor of Medicine & Surgery</div>
+          </div>
+          <div class="qt-row">
+            <div class="qt-icon">🏥</div>
+            <div class="qt-name">MD – Dermatology</div>
+            <div class="qt-detail">Post-Graduate Specialist Degree</div>
+          </div>
+        </div>
+        <div class="expertise-tags">
+          <span class="etag">Medical Dermatology</span>
+          <span class="etag">Psoriasis & Vitiligo</span>
+          <span class="etag">Laser Therapy</span>
+          <span class="etag">Hair Disorders</span>
+          <span class="etag">Acne Management</span>
+          <span class="etag">Cosmetic Procedures</span>
+          <span class="etag">Anti-Ageing</span>
+          <span class="etag">Skin Infections</span>
+        </div>
+      </div>
     </div>
-    <div class="exp-content">
-      <div class="section-header">
-        <div class="stag">About the Clinic</div>
-        <h2>Trusted Skin Care Since 2015</h2>
-        <p>Indra Skin Clinic was established in 2015 in Vikas Nagar, Lucknow, with a mission to bring world-class dermatological care close to home. Over 10 years, we've built an unparalleled reputation for safe, effective, and compassionate skin care.</p>
-      </div>
-      <div class="exp-items">
-        <div class="exp-item"><div class="exp-dot">✓</div><div class="exp-item-text"><strong>Expert Clinical Team</strong><span>Led by experienced dermatologists with extensive training in medical and cosmetic dermatology.</span></div></div>
-        <div class="exp-item"><div class="exp-dot">✓</div><div class="exp-item-text"><strong>State-of-the-Art Equipment</strong><span>Modern laser systems, diagnostic tools and sterile treatment rooms for superior outcomes.</span></div></div>
-        <div class="exp-item"><div class="exp-dot">✓</div><div class="exp-item-text"><strong>Personalised Care Plans</strong><span>Every patient receives a tailored treatment plan based on their skin type, lifestyle and goals.</span></div></div>
-        <div class="exp-item"><div class="exp-dot">✓</div><div class="exp-item-text"><strong>Affordable & Transparent Pricing</strong><span>No hidden costs. We believe great skin care should be accessible to everyone in our community.</span></div></div>
-      </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why-bg" id="why">
+  <div class="container">
+    <div class="sh center">
+      <div class="sh-over" style="color:var(--brass2)">Why Choose Dr. Kayum</div>
+      <div class="sh-h2" style="color:var(--white)">Decades of Trust &<br><em style="color:var(--brass3)">Clinical Precision</em></div>
+      <div class="sh-rule" style="margin:1rem auto .7rem"></div>
+      <p class="sh-p" style="color:rgba(255,255,255,.38)">When experience, qualification, and patient-first values converge — that is Dr. Kayum's practice.</p>
+    </div>
+    <div class="why-grid">
+      <div class="wc"><div class="wc-num">01</div><span class="wc-icon">🎓</span><h4>Dual Qualification</h4><p>MBBS followed by post-graduate MD in Dermatology — the highest academic foundation for a skin specialist.</p></div>
+      <div class="wc"><div class="wc-num">02</div><span class="wc-icon">🕐</span><h4>37 Years of Expertise</h4><p>Nearly four decades of uninterrupted practice means unmatched diagnostic experience with rare and complex cases.</p></div>
+      <div class="wc"><div class="wc-num">03</div><span class="wc-icon">🔬</span><h4>Evidence-Based Care</h4><p>Treatment protocols grounded in the latest dermatological research and decades of real-world clinical application.</p></div>
+      <div class="wc"><div class="wc-num">04</div><span class="wc-icon">🤝</span><h4>Patient-First Approach</h4><p>Every consultation is thorough, unhurried, and focused on long-term skin health — not just symptomatic relief.</p></div>
     </div>
   </div>
 </section>
 
 <!-- STATS -->
-<div class="stats-strip">
-  <div class="stats-grid">
-    <div class="stat-item"><div class="stat-num">10+</div><div class="stat-lbl">Years Established</div></div>
-    <div class="stat-item"><div class="stat-num">8K+</div><div class="stat-lbl">Happy Patients</div></div>
-    <div class="stat-item"><div class="stat-num">20+</div><div class="stat-lbl">Treatments Offered</div></div>
-    <div class="stat-item"><div class="stat-num">4.8★</div><div class="stat-lbl">Google Rating</div></div>
+<div class="stats-bg">
+  <div class="stats-inner">
+    <div class="stat-block"><div class="stat-n">37+</div><div class="stat-l">Years in Practice</div></div>
+    <div class="stat-block"><div class="stat-n">MBBS<br><span style="font-size:1.8rem">MD</span></div><div class="stat-l">Specialist Degrees</div></div>
+    <div class="stat-block"><div class="stat-n">5★</div><div class="stat-l">Patient Satisfaction</div></div>
+    <div class="stat-block"><div class="stat-n">LKO</div><div class="stat-l">Lucknow, UP</div></div>
   </div>
 </div>
 
-<!-- REVIEWS -->
-<section class="section" id="reviews">
-  <div class="section-header">
-    <div class="stag">Testimonials</div>
-    <h2>What Our Patients Say</h2>
-  </div>
-  <div class="rev-grid">
-    <div class="rev-card"><div class="rev-stars">★★★★★</div><div class="rev-text">"This clinic is a gem! Been coming here for 3 years for various skin issues. The staff is warm, the doctor is knowledgeable and the results speak for themselves. Highly recommended!"</div><div class="rev-name">Kavita Tiwari</div><div class="rev-sub">Pigmentation & Acne · Vikas Nagar</div></div>
-    <div class="rev-card"><div class="rev-stars">★★★★★</div><div class="rev-text">"Got laser hair removal done in 6 sessions and the results are permanent. Very professional approach. The clinic is hygienic and the pricing is very reasonable. Will definitely return!"</div><div class="rev-name">Rajat Pandey</div><div class="rev-sub">Laser Hair Removal · Lucknow</div></div>
-    <div class="rev-card"><div class="rev-stars">★★★★★</div><div class="rev-text">"I had severe eczema for years. After 2 months of treatment here, my skin has cleared up significantly. The doctor gave a very detailed explanation of my condition. 10/10!"</div><div class="rev-name">Sunita Gupta</div><div class="rev-sub">Eczema Management · Lucknow</div></div>
+<!-- TESTIMONIALS -->
+<section class="section testi-bg" id="testimonials">
+  <div class="container">
+    <div class="sh center">
+      <div class="sh-over">Patient Testimonials</div>
+      <div class="sh-h2">Trusted Across<br><em>Generations in Lucknow</em></div>
+      <div class="sh-rule"></div>
+    </div>
+    <div class="testi-grid">
+      <div class="tc">
+        <div class="tc-mark">"</div>
+        <div class="tc-stars">★★★★★</div>
+        <p class="tc-text">"Dr. Kayum has been treating our family for 20 years. His depth of knowledge is extraordinary. He diagnosed my psoriasis correctly when others had missed it. There is no better dermatologist in Lucknow."</p>
+        <div class="tc-footer"><div class="tc-av">AK</div><div><div class="tc-name">Aslam Khan</div><div class="tc-cond">Psoriasis · Lucknow</div></div></div>
+      </div>
+      <div class="tc">
+        <div class="tc-mark">"</div>
+        <div class="tc-stars">★★★★★</div>
+        <p class="tc-text">"I had a complex hair loss condition that several doctors couldn't treat. Dr. Kayum identified the root cause within one consultation. After 3 months of treatment, my hair has regrown significantly."</p>
+        <div class="tc-footer"><div class="tc-av">PT</div><div><div class="tc-name">Pooja Tripathi</div><div class="tc-cond">Hair Loss Treatment · Lucknow</div></div></div>
+      </div>
+      <div class="tc">
+        <div class="tc-mark">"</div>
+        <div class="tc-stars">★★★★★</div>
+        <p class="tc-text">"The level of attention and care at this clinic is rare. Dr. Kayum's experience shows in every aspect — from diagnosis to follow-up. My eczema is finally under control after years of suffering."</p>
+        <div class="tc-footer"><div class="tc-av">MS</div><div><div class="tc-name">Mohsin Siddiqui</div><div class="tc-cond">Eczema Management · Lucknow</div></div></div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section class="section contact-bg" id="contact">
-  <div class="section-header" style="text-align:center;">
-    <div class="stag" style="justify-content:center;">Contact Us</div>
-    <h2>Get In Touch With Our Clinic</h2>
-  </div>
-  <div class="contact-grid">
-    <div class="contact-aside">
-      <h3>We're Here For You</h3>
-      <div class="ca-item"><div class="ca-icon">📍</div><div><strong>Address</strong><p>Vikas Nagar, Lucknow, UP 226022</p></div></div>
-      <div class="ca-item"><div class="ca-icon">📞</div><div><strong>Phone / WhatsApp</strong><p>+91 98XXX XXXXX</p></div></div>
-      <div class="ca-item"><div class="ca-icon">🕐</div><div><strong>Hours</strong><p>Monday – Saturday: 10:00 AM – 7:00 PM<br>Sunday: By Appointment Only</p></div></div>
-      <div class="ca-item"><div class="ca-icon">✉️</div><div><strong>Email</strong><p>indraSkinclinic@gmail.com</p></div></div>
-      <div class="ca-item"><div class="ca-icon">🏆</div><div><strong>Established</strong><p>2015 · Serving Lucknow for 10+ Years</p></div></div>
-    </div>
-    <div class="contact-form">
-      <h3>Book Your Appointment</h3>
-      <div class="cf-row">
-        <div class="cf-field"><label>First Name</label><input type="text" placeholder="Your name"></div>
-        <div class="cf-field"><label>Phone</label><input type="tel" placeholder="+91 98XXX XXXXX"></div>
+<!-- BOOKING -->
+<section class="booking-bg" id="booking">
+  <div class="booking-inner">
+    <div class="book-left">
+      <div class="sh-over">Book an Appointment</div>
+      <div class="sh-h2">Schedule Your<br><em>Consultation</em></div>
+      <div class="sh-rule"></div>
+      <p>Consult directly with Dr. Shaikh Mohd Kayum at his private clinic in Lucknow. Fill the form and our team will confirm your appointment promptly.</p>
+      <div class="ci-list">
+        <div class="ci"><div class="ci-ico">📍</div><div><div class="ci-lbl">Clinic Location</div><div class="ci-val">Private Clinic, Lucknow, Uttar Pradesh</div></div></div>
+        <div class="ci"><div class="ci-ico">🎓</div><div><div class="ci-lbl">Qualifications</div><div class="ci-val">MBBS, MD – Dermatology</div></div></div>
+        <div class="ci"><div class="ci-ico">⭐</div><div><div class="ci-lbl">Experience</div><div class="ci-val">37 Years Specialist Dermatology Practice</div></div></div>
       </div>
-      <div class="cf-field"><label>Treatment Needed</label>
+      <div class="hours-panel">
+        <div class="hp-header"><span>🕐 &nbsp;Consultation Hours</span></div>
+        <div class="hp-row"><span>Monday – Friday</span><span>10:00 AM – 7:00 PM</span></div>
+        <div class="hp-row"><span>Saturday</span><span>10:00 AM – 5:00 PM</span></div>
+        <div class="hp-row"><span>Sunday</span><span>By Appointment Only</span></div>
+        <div class="hp-row"><span>Emergency</span><span>On Call</span></div>
+      </div>
+    </div>
+    <div class="form-card" id="contact">
+      <h3>Request Consultation</h3>
+      <p>We will confirm your appointment within a few hours</p>
+      <div class="g2">
+        <div class="fg"><label>First Name</label><input type="text" placeholder="Aslam"></div>
+        <div class="fg"><label>Last Name</label><input type="text" placeholder="Khan"></div>
+      </div>
+      <div class="g2">
+        <div class="fg"><label>Phone Number</label><input type="tel" placeholder="+91 XXXXX XXXXX"></div>
+        <div class="fg"><label>Email Address</label><input type="email" placeholder="you@email.com"></div>
+      </div>
+      <div class="g2">
+        <div class="fg"><label>Preferred Date</label><input type="date"></div>
+        <div class="fg"><label>Preferred Time</label>
+          <select>
+            <option>Morning (10 AM – 1 PM)</option>
+            <option>Afternoon (1 PM – 4 PM)</option>
+            <option>Evening (4 PM – 7 PM)</option>
+          </select>
+        </div>
+      </div>
+      <div class="fg"><label>Condition / Treatment</label>
         <select>
-          <option>Select treatment</option>
-          <option>Acne Treatment</option>
-          <option>Laser Hair Removal</option>
-          <option>Skin Brightening</option>
-          <option>Hair Loss / PRP</option>
-          <option>General Check-up</option>
-          <option>Other</option>
+          <option>General Skin Consultation</option>
+          <option>Psoriasis / Eczema / Vitiligo</option>
+          <option>Acne & Breakouts</option>
+          <option>Hair Loss / Alopecia</option>
+          <option>PRP Hair Therapy</option>
+          <option>Laser Treatment</option>
+          <option>Cosmetic / Aesthetic Procedure</option>
+          <option>Botox / Fillers</option>
+          <option>Skin Infection / Allergy</option>
+          <option>Pigmentation / Dark Spots</option>
+          <option>Anti-Ageing Treatment</option>
         </select>
       </div>
-      <div class="cf-row">
-        <div class="cf-field"><label>Preferred Date</label><input type="date"></div>
-        <div class="cf-field"><label>Preferred Time</label><select><option>Morning</option><option>Afternoon</option><option>Evening</option></select></div>
-      </div>
-      <div class="cf-field"><label>Your Concern</label><textarea placeholder="Tell us about your skin concern..."></textarea></div>
-      <button class="cf-btn">Book Appointment →</button>
+      <div class="fg"><label>Additional Notes</label><textarea placeholder="Please describe your skin concern or mention any relevant medical history..."></textarea></div>
+      <button class="fsub" onclick="submitForm()">Confirm Appointment →</button>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-grid">
-    <div class="footer-brand"><div class="footer-logo-text">Indra Skin Clinic</div><p>Your trusted neighbourhood dermatology clinic in Vikas Nagar, Lucknow. Established 2015. Providing expert, compassionate skin care for over a decade.</p></div>
-    <div><h5>Services</h5><ul><li><a href="#">General Dermatology</a></li><li><a href="#">Laser Therapy</a></li><li><a href="#">Acne Treatment</a></li><li><a href="#">Hair Loss / PRP</a></li><li><a href="#">Anti-Ageing</a></li></ul></div>
-    <div><h5>Information</h5><ul><li><a href="#">About the Clinic</a></li><li><a href="#">Patient Reviews</a></li><li><a href="#">Health Tips</a></li><li><a href="#">Gallery</a></li></ul></div>
-    <div><h5>Visit Us</h5><ul><li><a href="#">Vikas Nagar, Lucknow</a></li><li><a href="#">+91 98XXX XXXXX</a></li><li><a href="#">Mon–Sat 10am–7pm</a></li><li><a href="#">Book Online</a></li></ul></div>
-  </div>
-  <div class="fbot">
-    <p>© 2025 Indra Skin Clinic. All rights reserved. Est. 2015.</p>
-    <p>Lucknow · Uttar Pradesh · India</p>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="fbrand-name">Dr. Shaikh Mohd Kayum</div>
+        <div class="fbrand-sub">Senior Dermatologist · Lucknow</div>
+        <p class="fbrand-desc">MBBS, MD Dermatology. 37 years of specialist skin and hair practice in Lucknow, Uttar Pradesh. A name trusted across generations.</p>
+      </div>
+      <div class="fc">
+        <h5>Treatments</h5>
+        <a href="#">Medical Dermatology</a>
+        <a href="#">Laser Therapy</a>
+        <a href="#">Hair Loss & PRP</a>
+        <a href="#">Acne & Scars</a>
+        <a href="#">Anti-Ageing</a>
+      </div>
+      <div class="fc">
+        <h5>Clinic</h5>
+        <a href="#">About Dr. Kayum</a>
+        <a href="#">Patient Reviews</a>
+        <a href="#">Book Appointment</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="fc">
+        <h5>Location</h5>
+        <a href="#">Lucknow, UP</a>
+        <a href="#">Mon–Sat: 10AM–7PM</a>
+        <a href="#">MBBS · MD Dermatology</a>
+        <a href="#">37+ Years Practice</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Dr. Shaikh Mohd Kayum. All rights reserved.</p>
+      <p class="fb-acc">Lucknow, Uttar Pradesh · Senior Dermatologist</p>
+    </div>
   </div>
 </footer>
 
+<div class="toast" id="toast"></div>
+
+<script>
+function submitForm(){
+  const fields=document.querySelectorAll('.form-card input[type=text],.form-card input[type=tel]');
+  let ok=true;
+  fields.forEach(i=>{
+    if(!i.value.trim()){ok=false;i.style.borderColor='#b44'}
+    else i.style.borderColor='var(--border)';
+  });
+  const t=document.getElementById('toast');
+  t.textContent=ok?'✓ Appointment request submitted. We will confirm your slot shortly.':'⚠ Please enter your name and phone number.';
+  t.style.borderLeftColor=ok?'var(--slate)':'#b44';
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),4500);
+}
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{
+  const h=a.getAttribute('href');
+  if(h==='#')return;
+  e.preventDefault();
+  const el=document.querySelector(h);
+  if(el)el.scrollIntoView({behavior:'smooth',block:'start'});
+}));
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{
+  if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)'}
+}),{threshold:.08});
+document.querySelectorAll('.svc-card,.wc,.tc,.qs-item,.qt-row').forEach(el=>{
+  el.style.opacity='0';el.style.transform='translateY(16px)';el.style.transition='opacity .5s ease,transform .5s ease';obs.observe(el);
+});
+</script>
 </body>
 </html>
